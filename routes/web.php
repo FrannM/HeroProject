@@ -21,14 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/admin', 'App\Http\Controllers\AdminController@index');
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-Route::get('/admin/heroes', [HeroController::class, 'index'])->name('admin.heroes');
-Route::get('/admin/items', [ItemController::class, 'index'])->name('admin.items');
-Route::get('/admin/enemies', [EnemyController::class, 'index'])->name('admin.enemies');
+Route::group(['prefix' => 'admin'], function (){
+    //Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+    Route::get('/', [AdminController::class, 'index'])->name('admin');
+    Route::get('/heroes', [HeroController::class, 'index'])->name('admin.heroes');
+    Route::get('/items', [ItemController::class, 'index'])->name('admin.items');
+    Route::get('/enemies', [EnemyController::class, 'index'])->name('admin.enemies');
+});
 
-
-
-
-
-?>
