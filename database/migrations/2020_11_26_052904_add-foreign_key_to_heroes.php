@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLevelsTable extends Migration
+class AddForeignKeyToHeroes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateLevelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Levels', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('xp');
+        Schema::table('heroes', function (Blueprint $table) {
+            $table->bigInteger('level_id')->unsigned();
+
+            $table->foreign('level_id')->references('id')->on('levels');
         });
     }
 
@@ -26,6 +27,8 @@ class CreateLevelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Levels');
+        Schema::table('heroes', function (Blueprint $table) {
+            //
+        });
     }
 }
