@@ -20,19 +20,14 @@ class HeroController extends Controller
 
     }
 
-    public function store(request $request)
-    {
+    public function store(request $request){
+
         return $this->saveHero($request, null);
     }
 
-    public function update(request $request, $id)
-    {
-        return $this->saveHero($request, $id);
-    }
+    public function saveHero(request $request, $id){
 
-    public function saveHero(request $request, $id)
-    {
-        if ($id) {
+        if ($id){
             $hero = Hero::find($id);
         } else {
             $hero = new Hero();
@@ -51,14 +46,30 @@ class HeroController extends Controller
 
 
         $hero->save();
-        return redirect()->route('admin.heroes');
+
+        return redirect()->route('admin.heroes.index');
     }
 
+    public function update(request $request, $id)
+    {
+        $hero = Hero::find($id);
+        return $this->saveHero($request, $id);
+    }
 
     public function edit($id)
     {
+
         $hero = Hero::find($id);
 
         return view('admin.heroes.edit', ['hero' => $hero]);
+    }
+
+    public function destroy($id){
+
+        $hero = Hero::find($id);
+
+        $hero->delete();
+
+        return redirect()->route('admin.heroes.index');
     }
 }

@@ -22,15 +22,15 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function () {
-    //Route::get('/admin', 'App\Http\Controllers\AdminController@index');
-    Route::get('/', [AdminController::class, 'index'])->name('admin');
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 
     Route::group(['prefix' => 'heroes'], function () {
-        Route::get('/', [HeroController::class, 'index'])->name('admin.heroes');
+        Route::get('/', [HeroController::class, 'index'])->name('admin.heroes.index');
         Route::get('create', [HeroController::class, 'create'])->name('admin.heroes.create');
         Route::post('store', [HeroController::class, 'store'])->name('admin.heroes.store');
         Route::get('edit/{id}', [HeroController::class, 'edit'])->name('admin.heroes.edit');
         Route::post('update/{id}', [HeroController::class, 'update'])->name('admin.heroes.update');
+        Route::DELETE('destroy/{id}', [HeroController::class, 'destroy'])->name('admin.heroes.destroy');
     });
 
     Route::get('/items', [ItemController::class, 'index'])->name('admin.items');

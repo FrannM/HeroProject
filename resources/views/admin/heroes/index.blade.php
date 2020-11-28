@@ -28,7 +28,7 @@
         @foreach($heroes as $hero)
 
             <tr>
-                <th scope="row">{{$hero->id }}</th>
+                <th scope="row">{{ $hero->id }}</th>
                 <td>{{$hero->name }}</td>
                 <td>{{$hero->hp }}</td>
                 <td>{{$hero->atk }}</td>
@@ -37,13 +37,20 @@
                 <td>{{$hero->coins }}</td>
                 <td>{{$hero->xp }}</td>
                 <td>
-                    <a href="{{ route('admin.heroes.edit', ['id' => $hero->id]) }}" class=" btn btn-warning">Modificar</a>
-
-                    <a href="{{ route('admin.heroes') }}" class=" btn btn-danger">Eliminar</a>
-
+                    <div class="row">
+                        <div class="col-auto">
+                            <a href="{{ route('admin.heroes.edit', ['id' => $hero->id]) }}" class=" btn btn-warning">Modificar</a>
+                        </div>
+                        <div class="col-auto">
+                            <form action="{{ route('admin.heroes.destroy', ['id' => $hero->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Borrar</button>
+                            </form>
+                        </div>
+                    </div>
                 </td>
             </tr>
-
         @endforeach
         </tbody>
     </table>
