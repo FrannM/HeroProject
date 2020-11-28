@@ -32,8 +32,7 @@ class HeroController extends Controller
         } else {
             $hero = new Hero();
 
-            $hero->coins = 0;
-            $hero->xp = 0;
+
             $hero->level_id = 1;
         };
 
@@ -43,6 +42,8 @@ class HeroController extends Controller
         $hero->atk = $request->input('atk');
         $hero->def = $request->input('def');
         $hero->luck = $request->input('luck');
+        $hero->coins = $request->input('coins');
+        $hero->xp = $request->input('xp');
 
 
         $hero->save();

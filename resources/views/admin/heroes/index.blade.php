@@ -21,7 +21,11 @@
             <th scope="col">Suerte</th>
             <th scope="col">Monedas</th>
             <th scope="col">Experiencia</th>
-            <th scope="col">Acciones</th>
+            <th>
+                <div class="col ml-4">
+                    Acciones
+                </div>
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -39,7 +43,7 @@
                 <td>
                     <div class="row">
                         <div class="col-auto">
-                            <a href="{{ route('heroes.edit', $hero->id) }}" class=" btn btn-warning">Modificar</a>
+                            <a href="{{ route('heroes.edit', $hero->id) }}" class=" btn btn-warning">Editar</a>
                         </div>
                         <div class="col-auto">
                             <form action="{{ route('heroes.destroy', $hero->id) }}" method="POST">

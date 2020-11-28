@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Modificar Héroe</h1>
+    <h1>Editar Héroe - {{ $hero->name }}</h1>
 
     <form action="{{ route('heroes.update', $hero->id) }}" method="post">
         @csrf
@@ -26,8 +26,16 @@
             <label for="luck">Suerte</label>
             <input type="number" class="form-control" id="luck" name="luck" value="{{ $hero->luck }}" placeholder="Ingrese los puntos de suerte" required>
         </div>
+        <div class="form-group">
+            <label for="luck">Monedas</label>
+            <input type="number" class="form-control" id="coins" name="coins" value="{{ $hero->coins }}" placeholder="Ingrese la cantidad de monedas" required>
+        </div>
+        <div class="form-group">
+            <label for="luck">Experiencia</label>
+            <input type="number" class="form-control" id="xp" name="xp" value="{{ $hero->xp }}" placeholder="Ingrese los puntos de experiencia" required>
+        </div>
 
-        <button type="submit" class="btn btn-primary">Modificar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
     </form>
 
 @endsection

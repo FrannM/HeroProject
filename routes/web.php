@@ -25,6 +25,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 
     Route::resource('heroes', HeroController::class);
+    Route::resource('item', ItemController::class);
+    Route::resource('enemy', EnemyController::class);
+
     /*
     Route::group(['prefix' => 'heroes'], function () {
         Route::get('/', [HeroController::class, 'index'])->name('admin.heroes.index');
@@ -36,7 +39,4 @@ Route::group(['prefix' => 'admin'], function () {
     });
 */
 
-    Route::get('/items', [ItemController::class, 'index'])->name('admin.items');
-    Route::get('/enemies', [EnemyController::class, 'index'])->name('admin.enemies');
 });
-
