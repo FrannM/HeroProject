@@ -24,6 +24,8 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 
+    Route::resource('heroes', HeroController::class);
+    /*
     Route::group(['prefix' => 'heroes'], function () {
         Route::get('/', [HeroController::class, 'index'])->name('admin.heroes.index');
         Route::get('create', [HeroController::class, 'create'])->name('admin.heroes.create');
@@ -32,6 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('update/{id}', [HeroController::class, 'update'])->name('admin.heroes.update');
         Route::DELETE('destroy/{id}', [HeroController::class, 'destroy'])->name('admin.heroes.destroy');
     });
+*/
 
     Route::get('/items', [ItemController::class, 'index'])->name('admin.items');
     Route::get('/enemies', [EnemyController::class, 'index'])->name('admin.enemies');

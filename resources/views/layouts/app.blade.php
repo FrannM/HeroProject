@@ -24,7 +24,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route ('admin.heroes.index')}}">Héroes</a>
+                    <a class="nav-link" href="{{ route ('heroes.index')}}">Héroes</a>
                 </li>
 
                 <li class="nav-item">

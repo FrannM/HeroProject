@@ -47,7 +47,7 @@ class HeroController extends Controller
 
         $hero->save();
 
-        return redirect()->route('admin.heroes.index');
+        return redirect()->route('heroes.index');
     }
 
     public function update(request $request, $id)
@@ -70,6 +70,6 @@ class HeroController extends Controller
 
         $hero->delete();
 
-        return redirect()->route('admin.heroes.index');
+        return redirect()->route('heroes.index');
     }
 }
