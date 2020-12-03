@@ -7,7 +7,7 @@
     </div>
 
     <div class="row-3">
-        <a href="{{ route('enemy.create') }}" class=" btn btn-primary mb-2 mt-2">Crear Enemigo</a>
+        <a href="{{ route('enemies.create') }}" class=" btn btn-primary mb-2 mt-2">Crear Enemigo</a>
     </div>
 
     <table class="table table-hover">
@@ -43,11 +43,11 @@
                 <td>
                     <div class="row">
                         <div class="col-auto">
-                            <a href="{{ route('enemy.edit', $enemy->id) }}" class=" btn btn-warning">Editar</a>
+                            <a href="{{ route('enemies.edit', $enemy->id) }}" class=" btn btn-warning">Editar</a>
                         </div>
 
                         <div class="col-auto">
-                            <form action="{{ route('enemy.destroy', $enemy->id) }}" method="POST">
+                            <form action="{{ route('enemies.destroy', $enemy->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Borrar</button>

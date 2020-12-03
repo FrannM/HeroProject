@@ -28,11 +28,11 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route ('item.index') }}">Items</a>
+                    <a class="nav-link" href="{{ route ('items.index') }}">Items</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route ('enemy.index') }}">Enemigos</a>
+                    <a class="nav-link" href="{{ route ('enemies.index') }}">Enemigos</a>
                 </li>
             </ul>
         </div>

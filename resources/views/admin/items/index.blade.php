@@ -7,7 +7,7 @@
     </div>
 
     <div class="row-3">
-        <a href="{{ route('item.create') }}" class=" btn btn-primary mb-2 mt-2">Crear Item</a>
+        <a href="{{ route('items.create') }}" class=" btn btn-primary mb-2 mt-2">Crear Item</a>
     </div>
     <div class="row">
 
@@ -42,10 +42,10 @@
                     <td>
                         <div class="row">
                             <div class="col-auto">
-                                <a href="{{ route('item.edit', $item->id) }}" class=" btn btn-warning">Editar</a>
+                                <a href="{{ route('items.edit', $item->id) }}" class=" btn btn-warning">Editar</a>
                             </div>
                             <div class="col-auto">
-                                <form action="{{ route('item.destroy', $item->id) }}" method="POST">
+                                <form action="{{ route('items.destroy', $item->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Borrar</button>

@@ -89,7 +89,7 @@ class ItemController extends Controller
 
         $item->delete();
 
-        return redirect()->route('item.index');
+        return redirect()->route('items.index');
 
     }
 
@@ -111,6 +111,6 @@ class ItemController extends Controller
 
         $item->save();
 
-        return redirect()->route('item.index');
+        return redirect()->route('items.index');
     }
 }

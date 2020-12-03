@@ -89,7 +89,7 @@ class EnemyController extends Controller
 
         $enemy->delete();
 
-        return redirect()->route('enemy.index');
+        return redirect()->route('enemies.index');
     }
 
     public function saveEnemy(request $request, $id){
@@ -109,6 +109,6 @@ class EnemyController extends Controller
 
         $enemy->save();
 
-        return redirect()->route('enemy.index');
+        return redirect()->route('enemies.index');
     }
 }
